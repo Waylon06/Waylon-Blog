@@ -44,11 +44,11 @@ i {
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../public/fonts/icomoon.eot?2adm3n');
-  src:  url('../public/fonts/icomoon.eot?2adm3n#iefix') format('embedded-opentype'),
-    url('../public/fonts/icomoon.ttf?2adm3n') format('truetype'),
-    url('../public/fonts/icomoon.woff?2adm3n') format('woff'),
-    url('../public/fonts/icomoon.svg?2adm3n#icomoon') format('svg');
+  src:  url('./assets/fonts/icomoon.eot?2adm3n');
+  src:  url('./assets/fonts/icomoon.eot?2adm3n#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icomoon.ttf?2adm3n') format('truetype'),
+    url('./assets/fonts/icomoon.woff?2adm3n') format('woff'),
+    url('./assets/fonts/icomoon.svg?2adm3n#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
