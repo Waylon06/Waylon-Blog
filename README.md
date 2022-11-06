@@ -1,4 +1,4 @@
-# waylon-blog
+# Waylon-Blog
 
 ## Project setup
 ```
