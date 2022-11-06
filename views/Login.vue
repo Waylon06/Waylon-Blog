@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="user"><i class="icon-u"></i><input type="text" id="user" placeholder="Account" /></div>
+    <div class="user"><i class="icon-u"></i><input type="text" id="user" placeholder="Account" v-model="username"/></div>
     <div class="password">
       <i class="icon-p"></i>
-      <input type="password" placeholder="Password" id="password" />
+      <input type="password" placeholder="Password" id="password" v-model="password"/>
     </div>
-    <button class="login">Sign In</button>
+    <button class="login" @click="goToRegister">Sign In</button>
     <div class="remember">
       <el-switch
         v-model="value"
@@ -27,6 +27,8 @@ export default {
   name: "LoginPage",
   data() {
     return {
+      username: '',
+      password: '',
       value: true,
       menu: [
         {
@@ -41,6 +43,20 @@ export default {
       this.$router.push({
         name: item.name
       })
+    },
+    goToRegister() {
+      alert('Sorry,Your account has not been registered yet')
+      this.$router.push({path: '/register'})
+    }
+  },
+  watch: {
+    // 方式一
+    // username() {
+    //   this.$store.state.username = this.username
+    // }
+    // 方式二
+    username() {
+      this.$store.commit('changeUsername', this.username);
     }
   }
 };

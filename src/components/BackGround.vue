@@ -9,17 +9,30 @@
 export default {
   name: 'BackGround',
   data() {
-    return {};
+    return {
+      bgImgs:[
+      {imgUrl:require('../assets/images/BackGroundImg1.png')},
+      {imgUrl:require('../assets/images/BackGroundImg2.jpg')}, 
+      {imgUrl:require('../assets/images/BackGroundImg3.jpg')},
+      {imgUrl:require('../assets/images/BackGroundImg4.jpg')},
+      {imgUrl:require('../assets/images/BackGroundImg5.jpg')},
+      ]
+    };
   },
+  beforeCreate() {
+    this.$nextTick(function() {
+    let num =Math.floor(Math.random()*this.bgImgs.length);
+    let bg = document.querySelector('body');
+    // console.log(bg,bgImgs,num);
+    bg.style.background = "url("+this.bgImgs[num].imgUrl+") no-repeat"
+    bg.style.backgroundSize = "cover"
+    })
+    
+  }
 };
 </script>
 
 <style>
-body {
-  background: url(../assets/BackGroudImg.png) no-repeat;
-  background-size: cover;
-}
-
 .title {
   margin: 130px 0 auto;
   color: rgba(255, 255, 255, 1);

@@ -1,8 +1,17 @@
 <template>
   <div>
-    <div class="user"><i class="icon-u"></i><input type="text" id="user" placeholder="Account" /></div>
-    <div class="password"><i class="icon-p"></i><input type="password" id="password" placeholder="password"/></div>
-    <div class="email"><i class="icon-e"></i><input type="email" id="email" placeholder="email"/></div>
+    <div class="user">
+      <i class="icon-u"></i
+      ><input type="text" id="user" placeholder="Account" v-model="username" />
+    </div>
+    <div class="password">
+      <i class="icon-p"></i
+      ><input type="password" id="password" placeholder="password" />
+    </div>
+    <div class="email">
+      <i class="icon-e"></i
+      ><input type="email" id="email" placeholder="email" />
+    </div>
     <button class="register">Sign Up</button>
     <div class="more">
       <router-link to="/" class="login">Registered?Here to sign in</router-link>
@@ -11,20 +20,26 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "RegisterPage",
   data() {
-    return {
-      
-    }
+    return {};
   },
   methods: {
     changePage() {
-      this.$router.push({
+      this.$router.push({});
+    },
+  },
+  computed: {
+    // 方式一
+    // username() {
+    //   return this.$store.state.username;
+    // }
 
-      })
-    }
-  }
+    // 方式二
+    ...mapState(["username"]),
+  },
 };
 </script>
 
@@ -60,8 +75,8 @@ export default {
 }
 
 .icon-u::before {
-  font-family: 'icomoon';
-   content: '\e971';
+  font-family: "icomoon";
+  content: "\e971";
   position: absolute;
   top: 18px;
   left: 35px;
@@ -73,8 +88,8 @@ export default {
 }
 
 .icon-p::before {
-font-family: 'icomoon';
-   content: '\e98f';
+  font-family: "icomoon";
+  content: "\e98f";
   position: absolute;
   top: 18px;
   left: 35px;
@@ -86,8 +101,8 @@ font-family: 'icomoon';
 }
 
 .icon-e::before {
-  font-family: 'icomoon';
-   content: '\ea86';
+  font-family: "icomoon";
+  content: "\ea86";
   position: absolute;
   top: 18px;
   left: 35px;
@@ -121,6 +136,4 @@ input::-webkit-input-placeholder {
   color: rgba(211, 211, 211, 1);
   cursor: pointer;
 }
-
-
 </style>
